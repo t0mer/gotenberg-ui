@@ -42,4 +42,4 @@ def home(request: Request):
     return templates.TemplateResponse('index.html', context={'request': request, 'server_url' : gotenberg_api_address})
 
 if __name__ == '__main__':
-    uvicorn.run(app, host="0.0.0.0", port=3011)
+    uvicorn.run(app, host="0.0.0.0", port=8080)
