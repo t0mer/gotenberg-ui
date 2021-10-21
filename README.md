@@ -27,7 +27,7 @@ Actualy Gotenberg-ui is UI Wrapper of Gotenberg wich is "Docker-powered stateles
 # Installation
 
 #### Gotenberg Installation
-Deepstack Trainer installation is very easy using docker-compose:
+Gotenberg installation is very easy using docker-compose:
 ```
 version: "3.7"
 
@@ -40,7 +40,7 @@ services:
       - "3000:3000"
 ```
 #### Gotenberg UI Installation
-Deepstack Trainer installation is very easy using docker-compose:
+Gotenberg UI installation is very easy using docker-compose:
 ```
 version: "3.7"
 
