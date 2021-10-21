@@ -1,0 +1,393 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Gotenberg - A Docker-powered stateless API for PDF files</title>
+
+	<!-- For-Mobile-Apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="dist/js/jquery.min.js"></script>
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //For-Mobile-Apps -->
+
+	<!-- Style -->
+	<link rel="stylesheet" href="dist/css/style.css" type="text/css" media="all" />
+	<!-- Default-JavaScript-File -->
+	
+
+	<!-- Web-Fonts -->
+	<link href='https:////fonts.googleapis.com/css?family=Raleway:400,500,600,700,800' rel='stylesheet' type='text/css'>
+	<link href='https:////fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+	<!-- //Web-Fonts -->
+
+</head>
+
+<body>
+
+	<h1>Gotenberg - A Docker-powered stateless API for PDF files</h1>
+
+	<div class="container">
+
+		<div class="tab">
+
+			<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+				<script src="dist/js/easyResponsiveTabs.js" type="text/javascript"></script>
+				<script type="text/javascript">
+					$(document).ready(function () {
+						$('#horizontalTab').easyResponsiveTabs({
+							type: 'default', //Types: default, vertical, accordion
+							width: 'auto', //auto or any width like 600px
+							fit: true,   // 100% fit in a container
+							closed: 'accordion', // Start closed if in accordion view
+							activate: function (event) { // Callback function if tab is switched
+								var $tab = $(this);
+								var $info = $('#tabInfo');
+								var $name = $('span', $info);
+								$name.text($tab.text());
+								$info.show();
+							}
+						});
+
+						$('#verticalTab').easyResponsiveTabs({
+							type: 'vertical',
+							width: 'auto',
+							fit: true
+						});
+					});
+				</script>
+
+				<div class="tabs">
+
+					<div class="tab-left">
+						<ul class="resp-tabs-list">
+							<li class="resp-tab-item">Convert Web Page</li>
+							<li class="resp-tab-item">Convert HTML file</li>
+							<li class="resp-tab-item">Convert Documents</li>
+							<li class="resp-tab-item">Merge PDF Documents</li>
+						</ul>
+					</div>
+
+					<div class="tab-right">
+						<div class="resp-tabs-container">
+							<div class="register agileits">
+
+								<h3>Convert Web Page</h3>
+								<form action="{{  server_url }}/forms/chromium/convert/url" method="post"
+									enctype="multipart/form-data">
+									<input type="text" class="name" name="url" placeholder="url" id="url">
+									<input type="submit" value="Convert">
+									<div class="clear"></div>
+								</form>
+							</div>
+							<div class="tab-1 resp-tab-content">
+								<div class="register agileits">
+									<h3>Convert HTML file</h3>
+									<div style="display: block;margin-top:15px;color:white">
+										This route accepts a file named index.html.
+										<br />
+										<br />
+									</div>
+									<form action="http://192.168.0.252:3010/forms/chromium/convert/html" method="post"
+										enctype="multipart/form-data">
+										<input type="file" class="name" name="files[]" id="files" placeholder="Files"
+											multiple required="" style="color:white">
+
+										<div style="display: block;margin-top:5px;color:white">
+											<p id="hp"></p>
+
+											<p>
+										</div>
+
+
+										<input type="submit" value="Convert">
+										<div class="clear">
+
+										</div>
+
+									</form>
+									<div style="display: block;margin-top:15px;color:white">
+										You may also send additional files, like images, fonts, stylesheets, and so
+										on.
+										<br /><br />
+										The only requirement is that their paths in the index.html file are on the
+										root level.
+									</div>
+
+
+								</div>
+							</div>
+							<div class="tab-1 resp-tab-content">
+								<div class="register agileits">
+									<h3>Convert Documents</h3>
+									<div style="display: block;margin-top:15px;color:white">
+									</div>
+									<form action="http://192.168.0.252:3010/forms/libreoffice/convert" method="post"
+										enctype="multipart/form-data">
+										<input type="file" class="name" name="files[]" id="documents"
+											placeholder="Files" multiple required="" style="color:white">
+
+										<div style="display: block;margin-top:5px;color:white">
+											<p id="dp"></p>
+
+											<p>
+										</div>
+
+
+										<input type="submit" value="Convert">
+										<div class="clear">
+
+										</div>
+
+									</form>
+									<div style="display: block;margin-top:15px;color:white">
+										Supported file types:
+										<br /><br />
+										<code>.bib</code>&nbsp;
+										<code>.doc</code>&nbsp;
+										<code>.xml</code>&nbsp;
+										<code>.docx</code>&nbsp;
+										<code>.fodt</code>&nbsp;
+										<code>.html</code>&nbsp;
+										<code>.ltx</code>&nbsp;
+										<code>.txt</code>&nbsp;
+										<code>.odt</code>&nbsp;
+										<code>.ott</code>&nbsp;
+										<code>.pdb</code>&nbsp;
+										<code>.pdf</code>&nbsp;
+										<code>.psw</code>&nbsp;
+										<code>.rtf</code>&nbsp;
+										<code>.sdw</code>&nbsp;
+										<code>.stw</code>&nbsp;
+										<code>.sxw</code>&nbsp;
+										<code>.uot</code>&nbsp;
+										<code>.vor</code>&nbsp;
+										<code>.wps</code>&nbsp;
+										<code>.epub</code>&nbsp;
+										<code>.png</code>&nbsp;
+										<code>.bmp</code>&nbsp;
+										<code>.emf</code>&nbsp;
+										<code>.eps</code>&nbsp;
+										<code>.fodg</code>&nbsp;
+										<code>.gif</code>&nbsp;
+										<code>.jpg</code>&nbsp;
+										<code>.met</code>&nbsp;
+										<code>.odd</code>&nbsp;
+										<code>.otg</code>&nbsp;
+										<code>.pbm</code>&nbsp;
+										<code>.pct</code>&nbsp;
+										<code>.pgm</code>&nbsp;
+										<code>.ppm</code>&nbsp;
+										<code>.ras</code>&nbsp;
+										<code>.std</code>&nbsp;
+										<code>.svg</code>&nbsp;
+										<code>.svm</code>&nbsp;
+										<code>.swf</code>&nbsp;
+										<code>.sxd</code>&nbsp;
+										<code>.sxw</code>&nbsp;
+										<code>.tiff</code>&nbsp;
+										<code>.xhtml</code>&nbsp;
+										<code>.xpm</code>&nbsp;
+										<code>.fodp</code>&nbsp;
+										<code>.potm</code>&nbsp;
+										<code>.pot</code>&nbsp;
+										<code>.pptx</code>&nbsp;
+										<code>.pps</code>&nbsp;
+										<code>.ppt</code>&nbsp;
+										<code>.pwp</code>&nbsp;
+										<code>.sda</code>&nbsp;
+										<code>.sdd</code>&nbsp;
+										<code>.sti</code>&nbsp;
+										<code>.sxi</code>&nbsp;
+										<code>.uop</code>&nbsp;
+										<code>.wmf</code>&nbsp;
+										<code>.csv</code>&nbsp;
+										<code>.dbf</code>&nbsp;
+										<code>.dif</code>&nbsp;
+										<code>.fods</code>&nbsp;
+										<code>.ods</code>&nbsp;
+										<code>.ots</code>&nbsp;
+										<code>.pxl</code>&nbsp;
+										<code>.sdc</code>&nbsp;
+										<code>.slk</code>&nbsp;
+										<code>.stc</code>&nbsp;
+										<code>.sxc</code>&nbsp;
+										<code>.uos</code>&nbsp;
+										<code>.xls</code>&nbsp;
+										<code>.xlt</code>&nbsp;
+										<code>.xlsx</code>&nbsp;
+										<code>.tif</code>&nbsp;
+										<code>.jpeg</code>&nbsp;
+										<code>.odp</code>
+									</div>
+								</div>
+							</div>
+
+							<div class="tab-1 resp-tab-content">
+								<div class="register agileits">
+									<h3>Merge PDF Documents</h3>
+									<div style="display: block;margin-top:15px;color:white">
+									</div>
+									<form action="http://192.168.0.252:3010/forms/pdfengines/merge" method="post"
+										enctype="multipart/form-data">
+										<input type="file" class="name" name="files[]" id="merges"
+											placeholder="Files" multiple required="" style="color:white">
+
+										<div style="display: block;margin-top:5px;color:white">
+											<p id="mp"></p>
+
+											<p>
+										</div>
+
+
+										<input type="submit" value="Convert">
+										<div class="clear">
+
+										</div>
+
+									</form>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="footer">
+		<p> &copy; 2017 Classy Forms Widget. All Rights Reserved | Design by <a
+				href="http://w3layouts.com">W3layouts</a></p>
+	</div>
+
+</body>
+
+<script type="text/javascript" src="dist/js/sweetalert2.all.min.js"></script>
+<script>
+	const input = document.getElementById('files');
+	input.addEventListener('change', HtmlFileDetails);
+
+	const docinput = document.getElementById('documents');
+	docinput.addEventListener('change', DocumentFileDetails);
+
+	const mergeinput = document.getElementById('merges');
+	mergeinput.addEventListener('change', MergeFileDetails);
+
+
+
+	function HtmlFileDetails() {
+
+		// GET THE FILE INPUT.
+		var fi = document.getElementById('files');
+
+        indexExists = false;
+
+		// VALIDATE OR CHECK IF ANY FILE IS SELECTED.
+		if (fi.files.length > 0) {
+
+			// THE TOTAL FILE COUNT.
+			document.getElementById('hp').innerHTML =
+				'Total Files: <b>' + fi.files.length + '</b></br >';
+
+			// RUN A LOOP TO CHECK EACH SELECTED FILE.
+			for (var i = 0; i <= fi.files.length - 1; i++) {
+                if (fi.files.item(i).name=='index.html')
+				{
+					indexExists=true;
+				}
+				var fname = fi.files.item(i).name;      // THE NAME OF THE FILE.
+				var fsize = fi.files.item(i).size;      // THE SIZE OF THE FILE.
+
+				// SHOW THE EXTRACTED DETAILS OF THE FILE.
+				document.getElementById('hp').innerHTML =
+					document.getElementById('hp').innerHTML + '<br /> ' +
+					parseInt(i + 1) + '. ' + fname + ' (<b>' + fsize + '</b> bytes)';
+			}
+		}
+		else {
+
+		}
+		if(!indexExists)
+		{
+			Swal.fire('index.html file must be included', '', 'error');
+		}
+	}
+
+
+	function DocumentFileDetails() {
+
+// GET THE FILE INPUT.
+var fi = document.getElementById('documents');
+
+
+// VALIDATE OR CHECK IF ANY FILE IS SELECTED.
+if (fi.files.length > 0) {
+
+	// THE TOTAL FILE COUNT.
+	document.getElementById('dp').innerHTML =
+		'Total Files: <b>' + fi.files.length + '</b></br >';
+
+	// RUN A LOOP TO CHECK EACH SELECTED FILE.
+	for (var i = 0; i <= fi.files.length - 1; i++) {
+
+		var fname = fi.files.item(i).name;      // THE NAME OF THE FILE.
+		var fsize = fi.files.item(i).size;      // THE SIZE OF THE FILE.
+
+		// SHOW THE EXTRACTED DETAILS OF THE FILE.
+		document.getElementById('dp').innerHTML =
+			document.getElementById('dp').innerHTML + '<br /> ' +
+			parseInt(i + 1) + '. ' + fname + ' (<b>' + fsize + '</b> bytes)';
+	}
+}
+else {
+
+}
+}
+
+function MergeFileDetails() {
+
+// GET THE FILE INPUT.
+var fi = document.getElementById('merges');
+
+
+// VALIDATE OR CHECK IF ANY FILE IS SELECTED.
+if (fi.files.length > 0) {
+
+	// THE TOTAL FILE COUNT.
+	document.getElementById('mp').innerHTML =
+		'Total Files: <b>' + fi.files.length + '</b></br >';
+
+	// RUN A LOOP TO CHECK EACH SELECTED FILE.
+	for (var i = 0; i <= fi.files.length - 1; i++) {
+
+		var fname = fi.files.item(i).name;      // THE NAME OF THE FILE.
+		var fsize = fi.files.item(i).size;      // THE SIZE OF THE FILE.
+
+		// SHOW THE EXTRACTED DETAILS OF THE FILE.
+		document.getElementById('mp').innerHTML =
+			document.getElementById('mp').innerHTML + '<br /> ' +
+			parseInt(i + 1) + '. ' + fname + ' (<b>' + fsize + '</b> bytes)';
+	}
+}
+else {
+
+}
+}
+
+
+
+</script>
+
+
+</html>
