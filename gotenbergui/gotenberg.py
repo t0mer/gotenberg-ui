@@ -12,6 +12,7 @@ from starlette.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.encoders import jsonable_encoder
 
+gotenberg_api_address = os.getenv("GOTENBERG_API_ADDRESS")
 
 app = FastAPI(title="Docker Composer", description="Generate docker-compose for tunning containers", version="1.0.0")
 logger.info("Configuring app")
@@ -38,7 +39,7 @@ app.add_middleware(
 def home(request: Request):
     logger.info("loading default page")
     server_url = "http://192.168.0.252:3010"
-    return templates.TemplateResponse('index.html', context={'request': request, 'server_url' : server_url})
+    return templates.TemplateResponse('index.html', context={'request': request, 'server_url' : gotenberg_api_address})
 
 if __name__ == '__main__':
     uvicorn.run(app, host="0.0.0.0", port=3011)
