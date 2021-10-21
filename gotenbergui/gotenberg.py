@@ -38,7 +38,6 @@ app.add_middleware(
 @app.get("/")
 def home(request: Request):
     logger.info("loading default page")
-    server_url = "http://192.168.0.252:3010"
     return templates.TemplateResponse('index.html', context={'request': request, 'server_url' : gotenberg_api_address})
 
 if __name__ == '__main__':
