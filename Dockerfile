@@ -12,4 +12,4 @@ WORKDIR /opt/gotenbergui
 
 EXPOSE 8080
 
-ENTRYPOINT ["/usr/bin/python3", "gotenbergui.py"]
+ENTRYPOINT ["/usr/bin/python3", "gotenberg.py"]
