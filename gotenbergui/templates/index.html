@@ -96,7 +96,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<br />
 										<br />
 									</div>
-									<form action="http://192.168.0.252:3010/forms/chromium/convert/html" method="post"
+									<form action="{{  server_url }}/forms/chromium/convert/html" method="post"
 										enctype="multipart/form-data">
 										<input type="file" class="name" name="files[]" id="files" placeholder="Files"
 											multiple required="" style="color:white">
@@ -130,7 +130,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<h3>Convert Documents</h3>
 									<div style="display: block;margin-top:15px;color:white">
 									</div>
-									<form action="http://192.168.0.252:3010/forms/libreoffice/convert" method="post"
+									<form action="{{  server_url }}/forms/libreoffice/convert" method="post"
 										enctype="multipart/form-data">
 										<input type="file" class="name" name="files[]" id="documents"
 											placeholder="Files" multiple required="" style="color:white">
@@ -236,7 +236,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<h3>Merge PDF Documents</h3>
 									<div style="display: block;margin-top:15px;color:white">
 									</div>
-									<form action="http://192.168.0.252:3010/forms/pdfengines/merge" method="post"
+									<form action="{{  server_url }}/forms/pdfengines/merge" method="post"
 										enctype="multipart/form-data">
 										<input type="file" class="name" name="files[]" id="merges"
 											placeholder="Files" multiple required="" style="color:white">
